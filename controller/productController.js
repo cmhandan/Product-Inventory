@@ -107,7 +107,7 @@ const updateParticularProduct = (req, res) => {
     const {name, brand, price, inStock} = req.body;
     console.log(name, brand, price, inStock);
     if (name == undefined || brand == undefined || price == undefined || typeof inStock !== 'boolean' || price < 0) {
-      return res.status(401).json({
+      return res.status(400).json({
             status: "Failed",
             data: null,
             message:"All fields are required and must be valid"
